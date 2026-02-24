@@ -1,5 +1,6 @@
 import { Playfair_Display, Montserrat } from 'next/font/google';
 import "./globals.css";
+import Navbar from '../components/Navbar';
 
 // Fuente para titulos
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="es" className={`${playfair.variable} ${montserrat.variable}`}>
       <body>
         {children}
-     
+     <Navbar />
       </body>
     </html>
   );
