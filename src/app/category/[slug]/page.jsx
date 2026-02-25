@@ -107,8 +107,8 @@ export default function CategoryPage({ params }) {
       <ModalInfo isOpen={modalConfig.isOpen} onClose={cerrarModal} title={modalConfig.title}>
         {modalConfig.content}
       </ModalInfo>
-      {/* SECCIÓN DE CIERRE (Solo pregunta y texto) */}
-        <section className="py-24 bg-tarjeta/30 mt-20 border-t border-principal/5">
+      {/* SECCIÓN DE CIERRE  */}
+        <section className="py-10  mt-10 border-t border-principal/5">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
