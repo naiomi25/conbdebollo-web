@@ -26,8 +26,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${playfair.variable} ${montserrat.variable}`}>
       <body>
-        {children}
      <Navbar />
+        {children}
       </body>
     </html>
   );
