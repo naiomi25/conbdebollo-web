@@ -50,7 +50,7 @@ const categoriasDulces = [
 
 export default function DulcesPage() {
   return (
-    <main className="min-h-screen bg-fondo pt-32 pb-20">
+    <main className="min-h-screen bg-fondo pt-12 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -64,6 +64,7 @@ export default function DulcesPage() {
             Selecciona una categoría para descubrir todas nuestras variedades elaboradas diariamente.
           </p>
         </div>
+        
 
         {/* Grid de Categorías */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -106,10 +107,10 @@ export default function DulcesPage() {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-serif text-3xl sm:text-4xl text-principal mb-6">
+              <h3 className="font-serif text-2xl sm:text-3xl text-principal mb-6">
                 ¿Buscas algo específico?
               </h3>
-              <p className="text-lg text-texto leading-relaxed opacity-90 italic">
+              <p className="text-md text-texto leading-relaxed opacity-90 italic">
                Nuestras vitrinas cambian cada día. Si tienes un antojo especial, escríbenos.
               </p>
 

@@ -2,6 +2,7 @@ import { Playfair_Display, Montserrat } from 'next/font/google';
 import "./globals.css";
 import Navbar from '../components/Navbar';
 import Footer from '@/components/Footer';
+import WhatsappFlotante from '@/components/whatsapp';
 
 // Fuente para titulos
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           {children}
         </div>
       <Footer/>
+      <WhatsappFlotante />
       </body>
     </html>
   );
