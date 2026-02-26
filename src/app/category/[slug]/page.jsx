@@ -229,63 +229,57 @@ export default function CategoryPage({ params }) {
           </p>
         </section>
         {/* BLOQUE INFORMATIVO PARA MUFFINS */}
-{slug === "muffins" && (
-  <motion.section 
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5 }}
-    className="max-w-5xl mx-auto px-4 mb-16"
-  >
-    <div className="bg-tarjeta/50 border border-dorado/20 rounded-2xl  md:p-10 text-center relative overflow-hidden">
-      {/* Detalle decorativo: una esquina dorada o un icono sutil */}
-      <div className="absolute top-0 right-0 p-4 opacity-10">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-        </svg>
-      </div>
+        {slug === "muffins" && (
+          <motion.section
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="max-w-3xl mx-auto px-4 mb-16"
+          >
+            <div className="bg-tarjeta/50 border border-dorado/20 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
+              {/* Detalle decorativo: una esquina dorada o un icono sutil */}
 
-      <h4 className="font-serif text-principal text-xl mb-4 italic">
-        Formatos Especiales para Eventos
-      </h4>
-      <p className="text-texto text-base leading-relaxed max-w-3xl mx-auto opacity-90">
-        Toda nuestra selección de muffins está disponible también en formato <span className="font-bold">cupcake</span> (mín. 18 uds) y <span className="font-bold">minimuffin</span> (mín. 24 uds) para adaptarse perfectamente a sus eventos corporativos o reuniones familiares.
-      </p>
-      <div className="w-16 h-px bg-dorado/30 mx-auto mt-1 mb-4"></div>
-      <p className="text-sm text-principal/80 font-sans tracking-wide uppercase">
-        Consulte personalización de sabores y tamaños
-      </p>
-    </div>
-  </motion.section>
-)}
-{/* NUEVO: BLOQUE INFORMATIVO PARA TARTAS (TOPPERS) */}
-        {slug === "tartas" && (
-          <motion.section 
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5 }}
-    className="max-w-5xl mx-auto px-4 mb-16"
-  >
-    <div className="bg-tarjeta/50 border border-dorado/20 rounded-2xl  md:p-10 text-center relative overflow-hidden">
-      {/* Detalle decorativo: una esquina dorada o un icono sutil */}
-      <div className="absolute top-0 right-0 p-4 opacity-10">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-        </svg>
-      </div>
 
-      <h4 className="font-serif text-principal text-xl mb-4 italic">
-        Formatos Especiales para Eventos
-      </h4>
-      <p className="text-texto text-base leading-relaxed max-w-3xl mx-auto opacity-90">
-        Toda nuestra selección de muffins está disponible también en formato <span className="font-bold">cupcake</span> (mín. 18 uds) y <span className="font-bold">minimuffin</span> (mín. 24 uds) para adaptarse perfectamente a sus eventos corporativos o reuniones familiares.
-      </p>
-      <div className="w-16 h-px bg-dorado/30 mx-auto mt-1 mb-4"></div>
-      <p className="text-sm text-principal/80 font-sans tracking-wide uppercase">
-        Consulte personalización de sabores y tamaños
-      </p>
-    </div>
-  </motion.section>
+              <h4 className="font-serif text-principal text-lg mb-3 italic">
+                Formatos Especiales para Eventos
+              </h4>
+              <p className="text-texto text-sm leading-relaxed max-w-2xl mx-auto opacity-90">
+                Toda nuestra selección de muffins está disponible también en formato <span className="font-bold">cupcake</span> (mín. 18 uds) y <span className="font-bold">minimuffin</span> (mín. 24 uds) para adaptarse perfectamente a sus eventos corporativos o reuniones familiares.
+              </p>
+              <div className="w-12 h-px bg-dorado/30 mx-auto mt-1 mb-3"></div>
+              <p className="text-xs text-principal/80 font-sans tracking-wide uppercase">
+                Consulte personalización de sabores y tamaños
+              </p>
+            </div>
+          </motion.section>
         )}
+        {/* NUEVO: BLOQUE INFORMATIVO PARA TARTAS (TOPPERS) */}
+        {slug === "tartas" && (
+            
+          <motion.section
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="max-w-3xl mx-auto px-4 mb-16"
+          >
+            <div className="bg-tarjeta/50 border border-dorado/20 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
+              {/* Detalle decorativo: una esquina dorada o un icono sutil */}
+
+
+              <h4 className="font-serif text-principal text-lg mb-3 italic">
+                Corona tu tarta con un Topper
+              </h4>
+              <p className="text-texto text-sm leading-relaxed max-w-2xl mx-auto opacity-90">
+                Haz que tu celebración sea verdaderamente única. Personalizamos toppers en madera o acrílico con nombres, números o esa frase especial que lo significa todo.
+              </p>
+              <div className="w-12 h-px bg-dorado/30 mx-auto mt-1 mb-3"></div>
+              <p className="text-xs text-principal/80 font-sans tracking-wide uppercase">
+                Pregúntanos al hacer tu pedido
+              </p>
+            </div>
+          </motion.section>
+        )}
+        
         {/* GRID DE PRODUCTOS (3 Columnas) */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
           {data.productos.length > 0 ? (
