@@ -70,7 +70,7 @@ export default function Home() {
           ========================================= */}
       <section className="py-10  bg-tarjeta overflow-hidden">
         <div className="text-center px-4 mb-6">
-          <h2 className="text-4xl md:text-5xl text-principal font-serif mb-4">
+          <h2 className="text-3xl md:text-4xl text-principal font-serif mb-4">
             Lo que dicen nuestros clientes
           </h2>
           <p className="text-texto font-sans text-md">
