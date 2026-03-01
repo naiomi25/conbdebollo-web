@@ -21,7 +21,7 @@ const contenidoCategorias = {
         description: "Se elabora siguiendo el método tradicional neoyorquino, integrando un queso crema premium de alta densidad sobre una base artesana de galleta de mantequilla horneada a fuego lento. El resultado es una estructura densa pero aterciopelada que se funde en el paladar, ofreciendo un equilibrio perfecto entre la acidez sutil del lácteo y el sabor envolvente de nuestra mermelada casera de frutos rojos.",
         alergenos: ["Lácteos", "Huevos", "Gluten"],
         porciones: "8 - 10 raciones (15cm) / 12 - 15 raciones (18cm)",
-        image: "https://placehold.co/600x400/E7D4B5/4A3B2C?text=CheeseCake"
+        image: "/Gemini_Generated_Image_1fuxzm1fuxzm1fux.png"
       },
       {
         id: 2,
@@ -29,7 +29,15 @@ const contenidoCategorias = {
         description: "La Tarta Bony es una reinterpretación premium de la repostería clásica, elaborada con un bizcocho tierno de chocolate relleno de una nube de nata artesanal y una capa fina de mermelada de fruta seleccionada. Recubierta por un glaseado firme de cacao, esta creación despierta la nostalgia a través de una ejecución técnica superior, ofreciendo un contraste de texturas que deleita tanto a niños como a adultos.",
         alergenos: ["Lácteos", "Huevos", "Gluten", "Soja"],
         porciones: "10 - 12 raciones (15cm)",
-        image: "https://placehold.co/600x400/E7D4B5/4A3B2C?text=Chocolate"
+        image: "/Gemini_Generated_Image_4ylo984ylo984ylo.png"
+      },
+      {
+        id: 1,
+        title: "Tarta Red Velvet",
+        description: "Se elabora siguiendo el método tradicional neoyorquino, integrando un queso crema premium de alta densidad sobre una base artesana de galleta de mantequilla horneada a fuego lento. El resultado es una estructura densa pero aterciopelada que se funde en el paladar, ofreciendo un equilibrio perfecto entre la acidez sutil del lácteo y el sabor envolvente de nuestra mermelada casera de frutos rojos.",
+        alergenos: ["Lácteos", "Huevos", "Gluten"],
+        porciones: "8 - 10 raciones (15cm) / 12 - 15 raciones (18cm)",
+        image: "/Gemini_Generated_Image_hif2c9hif2c9hif2.png"
       },
     ]
   },
@@ -255,7 +263,7 @@ export default function CategoryPage({ params }) {
         )}
         {/* NUEVO: BLOQUE INFORMATIVO PARA TARTAS (TOPPERS) */}
         {slug === "tartas" && (
-            
+
           <motion.section
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -279,7 +287,7 @@ export default function CategoryPage({ params }) {
             </div>
           </motion.section>
         )}
-        
+
         {/* GRID DE PRODUCTOS (3 Columnas) */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
           {data.productos.length > 0 ? (
