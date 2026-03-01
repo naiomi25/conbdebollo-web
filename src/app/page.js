@@ -59,7 +59,7 @@ export default function Home() {
         <TarjetaZigzag
           titulo="Eventos inolvidables"
           descripcion="Diseñamos mesas dulces espectaculares y preparamos desayunos sorpresa a domicilio. Nos encargamos de que tu evento tenga el sabor más dulce."
-          enlace="/eventos"
+          enlace="/events"
           imageUrl="https://thumbs.dreamstime.com/b/mesa-de-postres-bodas-oto%C3%B1o-pastel-boda-blanco-con-flores-frescas-postre-tema-decoraci%C3%B3n-recepci%C3%B3n-176447911.jpg"
           inversa={false}
         />
@@ -83,6 +83,9 @@ export default function Home() {
             <p className="text-texto/70 text-lg leading-relaxed max-w-2xl mb-12 font-light">
               Cada tarta cuenta una historia única. Déjate sorprender por nuestras creaciones artesanales y <span className="text-principal font-medium">diseñemos juntos</span> el centro de tu celebración.
             </p>
+
+
+{/* Cambiar a botón como el resto de la web */}
 
             <Link
               href="/a-medida"
