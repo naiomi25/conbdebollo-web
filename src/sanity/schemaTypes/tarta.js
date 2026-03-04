@@ -24,8 +24,11 @@ export default {
     {
       name: 'alergenos',
       title: 'Información de Alérgenos (Pop-up)',
-      type: 'text',
-      rows: 2
+      type: 'array',
+      of: [{ type: 'string' }],
+     options: {
+        layout: 'tags' 
+      }
     },
     {
       name: 'porciones',
