@@ -9,9 +9,10 @@ export default function TarjetaProducto({ title, description, image, onOpenAller
     <div className="bg-tarjeta rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full border border-principal/10">
       
       {/* Foto más pequeña (h-48 en lugar de h-64) */}
-      <div className="h-48 overflow-hidden relative shrink-0 bg-principal/10">
+      <div className="aspect-square w-full overflow-hidden relative shrink-0 bg-principal/10 rounded-t-xl">
+  
          {image ? (
-           <img src={image} alt={title} className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
+           <img src={image} alt={title} className="w-full h-full object-cover object-position-bottom hover:scale-110 transition-transform duration-700"/>
          ) : (
            <div className="w-full h-full flex items-center justify-center text-principal/50 font-serif text-sm">Sin foto</div>
          )}
