@@ -1,5 +1,7 @@
-import tarta from './tarta'
+import producto from './producto'
+import opinion from './opinion'
+import paginaContenido from './paginaContenido'
 
 export const schema = {
-  types: [tarta],
+  types: [producto, opinion, paginaContenido],
 }

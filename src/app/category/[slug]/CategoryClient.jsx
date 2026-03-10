@@ -8,14 +8,14 @@ import ModalInfo from "@/components/ModalInfo";
 
 
 
-export default  function CategoryPage({ slug, productos }) {
+export default  function CategoryPage({ slug, productos, contenido }) {
 
- 
+  // Usamos los datos de Sanity o valores por defecto
   const data = {
-    titulo: slug,
-    descripcion: "Descubre nuestra selección artesanal.",
-    cierrePregunta: "¿Te gusta algo?",
-    cierreTexto: "Contáctanos para más información.",
+    titulo: contenido?.titulo || slug,
+    descripcion: contenido?.descripcion || "Descubre nuestra selección artesanal.",
+    cierrePregunta: contenido?.cierrePregunta || "¿Te gusta algo?",
+    cierreTexto: contenido?.cierreTexto || "Contáctanos para más información.",
     productos: productos || []
   };
 
