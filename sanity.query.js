@@ -5,26 +5,15 @@ const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: "production",
   apiVersion: "2024-01-01",
-  useCdn: false, // Para que los cambios se vean al instante
+  useCdn: false, 
 });
 
 const builder = imageUrlBuilder(client);
 
 export async function getProductosPorTipo(slug) {
-  const mapaTipos = {
-    "tartas": "tarta",
-    "muffins": "muffin",
-    "cookies": "cookie",
-    "palmeritas": "palmerita",
-    // Puedes añadir más en el futuro aquí
-  };
-
-  // 2. Buscamos qué tipo toca ahora. Si no existe, buscamos "nada".
-  const tipoDocumento = mapaTipos[slug] || "desconocido";
-
- // 3. Traemos las cosas de Sanity (Fíjate que ahora pedimos 'imagen' entera, sin el ->url)
+  // Ahora le decimos a Sanity: "Búscame los PRODUCTOS cuya CATEGORÍA sea igual al slug de la página"
   const productos = await client.fetch(
-    `*[_type == $tipoDocumento]{
+    `*[_type == "producto" && categoria == $slug]{
       _id,
       "title": nombre,
       "description": descripcion,
@@ -32,15 +21,30 @@ export async function getProductosPorTipo(slug) {
       alergenos,
       porciones
     }`,
-    { tipoDocumento }
+    { slug }
   );
 
-  // 4. Antes de mandar las tartas a tu web, pasamos las fotos por las "tijeras"
   return productos.map((producto) => {
     return {
       ...producto,
-      // Si la tarta tiene foto, usamos builder.image() que aplica el recorte automáticamente
       image: producto.imagen ? builder.image(producto.imagen).url() : null
     };
   });
+}
+export async function getOpiniones() {
+  return client.fetch(`*[_type == "opinion"]{
+    nombre,
+    comentario
+  }`);
+}
+export async function getContenidoPagina(slug) {
+  return client.fetch(
+    `*[_type == "paginaContenido" && identificador == $slug][0]{
+      titulo,
+      descripcion,
+      cierrePregunta,
+      cierreTexto
+    }`,
+    { slug }
+  );
 }
