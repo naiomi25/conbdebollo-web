@@ -8,16 +8,16 @@ export default {
       name: 'identificador',
       title: '¿Qué página es?',
       type: 'string',
+      
       options: {
         list: [
-          { title: 'Home', value: 'home' },
           { title: 'Tartas', value: 'tartas' },
           { title: 'Muffins', value: 'muffins' },
           { title: 'Cookies', value: 'cookies' },
           { title: 'Palmeritas', value: 'palmeritas' },
           { title: 'Bizcochos', value: 'bizcochos' },
-          { title: 'CakePop', value: 'cakepop' },
-          { title: 'Vasitos Cheesecake', value: 'vasitoscheesecake' },  
+          { title: 'CakePops', value: 'cakepops' },
+          { title: 'Vasitos Cheesecake', value: 'cheesecake-vasitos' },
           { title: 'Dulces', value: 'dulces' },
         ]
       }

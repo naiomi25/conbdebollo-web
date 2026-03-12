@@ -15,8 +15,8 @@ export default {
           { title: 'Cookies', value: 'cookies' },
           { title: 'Palmeritas', value: 'palmeritas' },
           { title: 'Bizcochos', value: 'bizcochos' },
-          { title: 'CakePop', value: 'cakepop' },
-          { title: 'Vasitos Cheesecake', value: 'vasitoscheesecake' },
+          { title: 'CakePops', value: 'cakepops' },
+          { title: 'Cheesecake en Vasitos', value: 'cheesecake-vasitos' },
           
         ],
         layout: 'radio' 
