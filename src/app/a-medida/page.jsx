@@ -1,4 +1,4 @@
-import ConfiguradorTartas from "@/components/ConfiguradorTartas";
+import ConfiguradorTartas from "@/components/Configurador/ConfiguradorTartas";
 
 export const metadata = {
     title: "Diseña tu tarta a medida | Con B de Bollo",
