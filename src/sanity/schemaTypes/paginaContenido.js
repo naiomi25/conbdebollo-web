@@ -8,6 +8,7 @@ export default {
       name: 'identificador',
       title: '¿Qué página es?',
       type: 'string',
+      
       options: {
         list: [
           { title: 'Tartas', value: 'tartas' },
