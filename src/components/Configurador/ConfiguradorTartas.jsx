@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Paso1Datos from "./Paso1Datos";
 import Paso2Base from "./Paso2Base";
 import Paso3Interior from "./Paso3Interior";
 import Paso4Extras from "./Paso4Extras";
 import { enviarPorWhatsApp } from "@/utils/whatsapp";
+import { enviarPorEmail } from "@/utils/email";
 
 export default function ConfiguradorTartas() {
     const [pasoActual, setPasoActual] = useState(1);
@@ -32,6 +33,7 @@ export default function ConfiguradorTartas() {
 
     const [metodoEnvio, setMetodoEnvio] = useState("whatsapp");
     const [emailCliente, setEmailCliente] = useState("");
+    const [fotoAdjunta, setFotoAdjunta] = useState(null);
 
     const seleccionarBizcocho = (sabor) => setTarta({ ...tarta, bizcocho: sabor });
     const seleccionarRelleno = (sabor) => setTarta({ ...tarta, relleno: sabor });
@@ -40,20 +42,34 @@ export default function ConfiguradorTartas() {
     const avanzarPaso = () => setPasoActual(pasoActual + 1);
     const retrocederPaso = () => setPasoActual(pasoActual - 1);
 
-    const enviarPedido = () => {
-       if (metodoEnvio === "whatsapp") {
+    const enviarPedido = async () => {
+        if (metodoEnvio === "whatsapp") {
             // Si eligió WhatsApp, llamamos a nuestra nueva función pasándole los datos
             enviarPorWhatsApp(datosCliente, tarta, extras);
         } else {
-            // Dejamos esto preparado para cuando hagamos el motor de Email
-            alert("El motor de Email lo conectaremos en el próximo paso ✉️");
-            console.log("Datos para el email:", { datosCliente, tarta, extras, emailCliente });
+            try {
+
+                await enviarPorEmail(datosCliente, tarta, extras, emailCliente, fotoAdjunta);
+
+                // Si la línea de arriba termina sin errores, mostramos el éxito
+                alert("¡Pedido enviado por email con éxito! 🎉 Revisa tu bandeja de entrada.");
+
+            } catch (error) {
+                // Si el backend da algún fallo, avisamos para que no se queden esperando
+                console.error("Falló el envío:", error);
+                alert("Uy, hubo un problemilla enviando el correo. ¿Podrías intentarlo por WhatsApp?");
+            }
         }
     };
 
     return (
         <div className="min-h-screen bg-fondo py-10 px-4 flex items-center justify-center">
-            <div className="max-w-lg w-full bg-tarjeta p-6 md:p-8 rounded-3xl shadow-xl border border-principal/5">
+            <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+                className="max-w-lg w-full bg-tarjeta p-6 md:p-8 rounded-3xl shadow-xl border border-principal/5"
+            >
 
                 <h2 className="text-2xl md:text-3xl font-serif text-principal mb-5 text-center">
                     Diseña tu tarta a medida
@@ -105,10 +121,12 @@ export default function ConfiguradorTartas() {
                             setEmailCliente={setEmailCliente}
                             retrocederPaso={retrocederPaso}
                             enviarPedido={enviarPedido}
+                            fotoAdjunta={fotoAdjunta}
+                            setFotoAdjunta={setFotoAdjunta}
                         />
                     )}
                 </AnimatePresence>
-            </div>
+            </motion.div>
         </div>
     );
 }

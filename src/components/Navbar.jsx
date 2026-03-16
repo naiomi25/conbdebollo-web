@@ -31,7 +31,9 @@ export default function Navbar() {
             <li><Link href="/category/tartas" className="hover:text-principal transition-colors">Tartas</Link></li>
             <li><Link href="/dulces" className="hover:text-principal transition-colors">Dulces</Link></li>
             <li><Link href="/events" className="hover:text-principal transition-colors">Eventos</Link></li>
+            <li><Link href="/a-medida" className="hover:text-principal transition-colors">Tu Tarta</Link></li>
             <li><Link href="/conocenos" className="hover:text-principal transition-colors">Conócenos</Link></li>
+
           </ul>
 
           {/* Botón Hamburguesa para Móvil */}
@@ -73,6 +75,7 @@ export default function Navbar() {
           <Link href="/category/tartas" onClick={() => setMenuAbierto(false)}>Tartas</Link>
           <Link href="/dulces" onClick={() => setMenuAbierto(false)}>Dulces</Link>
           <Link href="/events" onClick={() => setMenuAbierto(false)}>Eventos</Link>
+          <Link href="/a-medida" onClick={() => setMenuAbierto(false)}>Tu Tarta</Link>
           <Link href="/conocenos" onClick={() => setMenuAbierto(false)}>Conócenos</Link>
         </div>
       )}

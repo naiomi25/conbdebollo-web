@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoEnvio, emailCliente, setEmailCliente, retrocederPaso, enviarPedido }) {
+export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoEnvio, emailCliente, setEmailCliente, retrocederPaso, enviarPedido ,fotoAdjunta, setFotoAdjunta}) {
     return (
         <motion.div
             key="paso4"
@@ -64,7 +64,9 @@ export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoE
                         </div>
                         <div>
                             <label className="block text-xs font-bold text-principal mb-1">Foto de inspiración (Opcional)</label>
-                            <input type="file" accept="image/*" className="w-full text-xs text-texto/60 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-principal/10 file:text-principal hover:file:bg-principal/20 transition-all cursor-pointer" />
+                            <input type="file" accept="image/*" 
+                            onChange={(e) => setFotoAdjunta(e.target.files[0])}
+                            className="w-full text-xs text-texto/60 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-principal/10 file:text-principal hover:file:bg-principal/20 transition-all cursor-pointer" />
                         </div>
                     </motion.div>
                 )}

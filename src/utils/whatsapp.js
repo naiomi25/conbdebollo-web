@@ -43,7 +43,7 @@ export const enviarPorWhatsApp = (datosCliente, tarta, extras) => {
     // Codificamos todo el texto final
     const mensajeCodificado = encodeURIComponent(mensaje);
 
-    // Usamos la API oficial profunda de WhatsApp, que es más segura para textos largos
+    // API oficial  de WhatsApp
     const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${mensajeCodificado}`;
 
     window.open(url, '_blank');
