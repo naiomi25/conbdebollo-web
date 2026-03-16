@@ -37,8 +37,8 @@ export default function HomeClient({ opinionesSanity }) {
 
       <section className="pt-24 pb-0 px-8 max-w-7xl mx-auto overflow-hidden">
         <TarjetaZigzag
-          titulo="Tartas Personalizadas"
-          descripcion="El centro de todas las miradas en tu celebración. Bizcochos esponjosos, rellenos sedosos y una decoración elegante pensada exclusivamente para ti."
+          titulo="Tartas artesanales"
+          descripcion="Descubre nuestra selección de tartas elaboradas con los ingredientes más frescos. Desde clásicos atemporales hasta creaciones modernas que sorprenderán a tus invitados. Cada tarta es una obra de arte comestible."
           enlace="/category/tartas"
           imageUrl="https://blog.tuimusement.com/wp-content/uploads/2019/11/tartas-AdobeStock_209102761.jpeg" 
           inversa={false}
@@ -69,10 +69,11 @@ export default function HomeClient({ opinionesSanity }) {
             <p className="text-texto/70 text-lg leading-relaxed max-w-2xl mb-12 font-light">
               Cada tarta cuenta una historia única. Déjate sorprender por nuestras creaciones artesanales y <span className="text-principal font-medium">diseñemos juntos</span> el centro de tu celebración.
             </p>
-            <Link href="/a-medida" className="group flex flex-col items-center gap-4">
-              <div className="text-principal font-bold text-xs tracking-[0.2em] uppercase transition-all group-hover:tracking-[0.3em]">
-                descubrir inspiraciones
-              </div>
+            <Link 
+              href="/a-medida" 
+              className="px-8 py-3 bg-principal text-fondo font-bold rounded-full hover:bg-oscuro transition-colors"
+            >
+              Descubrir inspiraciones
             </Link>
           </div>
         </div>

@@ -59,7 +59,7 @@ export default function TarjetaProducto({ title, description, image, onOpenAller
             className="w-7 h-7 rounded-full bg-fondo flex items-center justify-center text-xs shadow-sm hover:bg-principal hover:text-fondo transition-colors" 
             title="Ver Alérgenos"
           >
-            ⚠️
+            <img src="/PUNTO INFORMACION ALERGENOS.png" alt="Info alérgenos" className="w-8 h-8" />
           </button>
         </div>
       </div>

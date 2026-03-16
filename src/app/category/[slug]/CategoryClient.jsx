@@ -8,7 +8,7 @@ import ModalInfo from "@/components/ModalInfo";
 
 
 
-export default  function CategoryPage({ slug, productos, contenido }) {
+export default function CategoryPage({ slug, productos, contenido }) {
 
   // Usamos los datos de Sanity o valores por defecto
   const data = {
@@ -66,9 +66,9 @@ export default  function CategoryPage({ slug, productos, contenido }) {
   return (
     <main className="min-h-screen bg-fondo pt-15 pb-0">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
       >
         {/* CABECERA DINÁMICA */}
         <section className="text-center max-w-3xl mx-auto px-4 mb-10">
@@ -88,7 +88,7 @@ export default  function CategoryPage({ slug, productos, contenido }) {
             className="max-w-3xl mx-auto px-4 mb-16"
           >
             <div className="bg-tarjeta/50 border border-dorado/20 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
-              {/* Detalle decorativo: una esquina dorada o un icono sutil */}
+
 
 
               <h4 className="font-serif text-principal text-lg mb-3 italic">

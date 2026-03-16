@@ -54,9 +54,9 @@ export default function DulcesClient({ contenido }) {
     return (
         <main className="min-h-screen bg-fondo pt-12 pb-20">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
                 className="max-w-7xl mx-auto px-6"
             >
                 {/* Cabecera */}

@@ -1,16 +1,15 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 const eventosInfo = [
   {
     id: 1,
     title: "Mesas Dulces",
-    desc: "Creamos rincones mágicos y personalizados para tus eventos. Desde candy bars temáticos hasta montajes de diseño que reflejan tu estilo.",
-    img: "https://www.hola.com/horizon/square/cc93fd630836-portada-mesas-dulces-t.jpg", 
-    detalles: ["Diseño personalizado", "Montaje artesano", "Variedad de repostería"],
-    link: "/contacto?servicio=mesas-dulces"
+    desc: "Creamos momentos dulces para un día único. Desde tartas personalizadas hasta mesas dulces completas que harán las delicias de todos los invitados.",
+    img: "https://www.hola.com/horizon/square/cc93fd630836-portada-mesas-dulces-t.jpg",
+    detalles: ["Tartas  personalizadas.", "Cupcakes y galletas temáticas a juego.", "Montaje de mesas dulces completas (Candy Bar).","Detalles para invitados."],
+    inversa: false
   },
   {
     id: 2,
@@ -18,7 +17,7 @@ const eventosInfo = [
     desc: "Sorpresas dulces para empezar el día de la mejor manera. Cestas gourmet elaboradas con productos frescos de nuestro obrador.",
     img: "https://static.wixstatic.com/media/4f9332_ca1dad89b1aa4d1f80fb78915b8467e8~mv2.png/v1/fill/w_615,h_531,al_c,q_85,enc_avif,quality_auto/4f9332_ca1dad89b1aa4d1f80fb78915b8467e8~mv2.png",
     detalles: ["Cestas a domicilio", "Opciones dulces y saladas", "Zumos naturales"],
-    link: "/contacto?servicio=desayunos"
+    inversa: true
   }
 ];
 
@@ -26,58 +25,68 @@ export default function EventosPage() {
   return (
     <main className="min-h-screen bg-fondo pt-12 pb-20">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
         className="max-w-7xl mx-auto px-6"
       >
-        {/* Cabecera - Exactamente igual a DulcesPage */}
+        {/* Cabecera */}
         <div className="text-center mb-16">
           <h1 className="font-serif text-5xl text-principal mb-4 italic">Eventos</h1>
           <p className="text-texto max-w-2xl mx-auto text-lg">
-           Propuestas gastronómicas artesanales.
+            Propuestas gastronómicas artesanales.
           </p>
         </div>
 
-        {/* Grid de Eventos - Usando la misma lógica de Grid y Cards de Dulces */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Eventos con efecto Zigzag */}
+        <div className="space-y-24">
           {eventosInfo.map((evento) => (
-            <Link href={evento.link} key={evento.id} className="group">
+            <div
+              key={evento.id}
+              className={`flex flex-col items-center gap-12 ${evento.inversa ? "md:flex-row-reverse" : "md:flex-row"}`}
+            >
+              {/* LA FOTO */}
               <motion.div
-                whileHover={{ y: -10 }}
-                className="bg-tarjeta rounded-2xl overflow-hidden shadow-sm border border-principal/10 transition-all hover:shadow-xl h-full flex flex-col"
+                initial={{ opacity: 0, x: evento.inversa ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full md:w-3/5 overflow-hidden rounded-2xl shadow-lg relative h-[350px] md:h-[500px] bg-principal/20"
               >
-                {/* Imagen Vertical - Misma altura y efectos que en Dulces */}
-                <div className="h-72 overflow-hidden relative shrink-0">
-                  <img
-                    src={evento.img}
-                    alt={evento.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
+                <img
+                  src={evento.img}
+                  alt={evento.title}
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                />
+              </motion.div>
 
-                {/* Info - Misma estructura de padding y textos */}
-                <div className="p-6 flex flex-col grow justify-between text-center">
-                  <div>
-                    <h3 className="font-serif text-xl text-principal mb-3 group-hover:text-oscuro transition-colors font-bold italic">
-                      {evento.title}
-                    </h3>
-                    <p className="text-texto text-sm leading-relaxed opacity-80 mb-6">
-                      {evento.desc}
-                    </p>
-                    
-                    {/* Detalles añadidos con estilo minimalista */}
-                    <div className="flex flex-col gap-2 mb-4">
-                      {evento.detalles.map((punto, i) => (
-                        <span key={i} className="text-[9px] uppercase tracking-[0.2em] text-principal/50">
-                          {punto}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+              {/* EL TEXTO - Tamaño ampliado */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="w-full md:w-2/5 flex flex-col"
+              >
+                <h3 className="font-serif text-4xl text-principal mb-2">{evento.title}</h3>
+
+                {/* La línea divisoria elegante - Más grande */}
+                <div className="w-16 h-1 bg-dorado mb-6"></div>
+
+                 <p className="text-texto leading-relaxed text-lg mb-8">
+                  {evento.desc}
+                </p>
+
+                {/* Detalles con estilo más grande */}
+                <div className="flex flex-col gap-3">
+                  {evento.detalles.map((punto, i) => (
+                    <span key={i} className="text-xs uppercase tracking-[0.2em] text-principal/60">
+                      • {punto}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -97,7 +106,7 @@ export default function EventosPage() {
                 Cada evento es un mundo.
               </p>
               <p className="text-md text-texto leading-relaxed opacity-90 italic mt-2">
-                 Cuéntanos tu idea y diseñaremos una propuesta a medida para ti.
+                Cuéntanos tu idea y diseñaremos una propuesta a medida para ti.
               </p>
 
               {/* Los tres puntos decorativos de cierre */}
