@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoEnvio, emailCliente, setEmailCliente, retrocederPaso, enviarPedido, fotoAdjunta, setFotoAdjunta }) {
+export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoEnvio, emailCliente, setEmailCliente, retrocederPaso, enviarPedido, fotoAdjunta, setFotoAdjunta, pedidoEnviado, setPedidoEnviado }) {
     const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
     return (
         <motion.div
@@ -74,35 +74,61 @@ export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoE
                 )}
             </div>
 
-            {/* CHECKBOX LEGAL (Obligatorio) */}
-            <div className="mt-6 mb-4 flex items-start gap-3 p-3 bg-principal/5 rounded-xl border border-principal/10">
-                <input
-                    type="checkbox"
-                    id="privacidad"
-                    checked={aceptaPrivacidad}
-                    onChange={(e) => setAceptaPrivacidad(e.target.checked)}
-                    className="mt-1 w-4 h-4 text-green-600 rounded border-principal/30 focus:ring-green-600"
-                />
-                <label htmlFor="privacidad" className="text-xs text-texto/80 leading-relaxed">
-                    He leído y acepto la <a href="/politica-privacidad" target="_blank" className="text-principal font-bold underline hover:text-oscuro">Política de Privacidad</a> y consiento el tratamiento de mis datos para gestionar este pedido. *
-                </label>
-            </div>
+            {/* LÓGICA CONDICIONAL: ¿Se ha enviado el pedido? */}
+            {pedidoEnviado ? (
 
-            {/* TUS BOTONES DE SIEMPRE */}
-            <div className="flex gap-2 pt-2">
-                <button onClick={retrocederPaso} className="px-4 py-3 rounded-xl font-bold text-principal border border-principal/20 bg-fondo hover:bg-principal/5 transition-colors text-sm">Atrás</button>
-                <button
-                    onClick={enviarPedido}
-                    // Ahora se desactiva si falta el email (en modo email) O si no han aceptado la política
-                    disabled={(metodoEnvio === 'email' && !emailCliente) || !aceptaPrivacidad}
-                    className={`flex-1 py-3 rounded-xl font-bold transition-all shadow-sm text-sm 
-                        ${((metodoEnvio === 'email' && !emailCliente) || !aceptaPrivacidad)
-                            ? 'bg-principal/30 text-fondo cursor-not-allowed'
-                            : 'bg-principal text-fondo hover:bg-oscuro'}`}
-                >
-                    {metodoEnvio === "whatsapp" ? "Enviar por WhatsApp 💬" : "Enviar por Email ✉️"}
-                </button>
-            </div>
+                // SI ESTÁ ENVIADO: Mostramos este mensaje bonito
+                <div className="mt-4 p-4 bg-principal/5 border border-principal/10 rounded-xl text-center">
+                    <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+                        ✓
+                    </div>
+                    <h3 className="text-lg font-bold text-principal mb-1">¡Pedido enviado con éxito!</h3>
+                    <p className="text-texto/70 text-xs mb-3">
+                        Hemos recibido tu solicitud correctamente. Nos pondremos en contacto contigo lo antes posible para confirmar los detalles.
+                    </p>
+                    <button
+                        onClick={() => window.location.reload()}
+                        className="px-5 py-2 bg-principal text-fondo rounded-xl font-bold hover:bg-oscuro transition-colors text-xs"
+                    >
+                        Hacer otro pedido
+                    </button>
+                </div>
+
+            ) : (
+
+                // SI NO ESTÁ ENVIADO: Mostramos el checkbox y los botones de siempre
+                <>
+                    {/* CHECKBOX LEGAL (Obligatorio) */}
+                    <div className="mt-6 mb-4 flex items-start gap-3 p-3 bg-principal/5 rounded-xl border border-principal/10">
+                        <input
+                            type="checkbox"
+                            id="privacidad"
+                            checked={aceptaPrivacidad}
+                            onChange={(e) => setAceptaPrivacidad(e.target.checked)}
+                            className="mt-1 w-4 h-4 text-green-600 rounded border-principal/30 focus:ring-green-600"
+                        />
+                        <label htmlFor="privacidad" className="text-xs text-texto/80 leading-relaxed">
+                            He leído y acepto la <a href="/politica-privacidad" target="_blank" className="text-principal font-bold underline hover:text-oscuro">Política de Privacidad</a> y consiento el tratamiento de mis datos para gestionar este pedido. *
+                        </label>
+                    </div>
+
+                    {/* BOTONES DE SIEMPRE */}
+                    <div className="flex gap-2 pt-2">
+                        <button onClick={retrocederPaso} className="px-4 py-3 rounded-xl font-bold text-principal border border-principal/20 bg-fondo hover:bg-principal/5 transition-colors text-sm">Atrás</button>
+                        <button
+                            onClick={enviarPedido}
+                            disabled={(metodoEnvio === 'email' && !emailCliente) || !aceptaPrivacidad}
+                            className={`flex-1 py-3 rounded-xl font-bold transition-all shadow-sm text-sm 
+                                ${((metodoEnvio === 'email' && !emailCliente) || !aceptaPrivacidad)
+                                    ? 'bg-principal/30 text-fondo cursor-not-allowed'
+                                    : 'bg-principal text-fondo hover:bg-oscuro'}`}
+                        >
+                            {metodoEnvio === "whatsapp" ? "Enviar por WhatsApp 💬" : "Enviar por Email ✉️"}
+                        </button>
+                    </div>
+                </>
+
+            )}
         </motion.div>
     );
 }

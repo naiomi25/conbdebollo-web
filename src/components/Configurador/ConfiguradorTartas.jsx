@@ -34,6 +34,7 @@ export default function ConfiguradorTartas() {
     const [metodoEnvio, setMetodoEnvio] = useState("whatsapp");
     const [emailCliente, setEmailCliente] = useState("");
     const [fotoAdjunta, setFotoAdjunta] = useState(null);
+    const [pedidoEnviado, setPedidoEnviado] = useState(false);
 
     const seleccionarBizcocho = (sabor) => setTarta({ ...tarta, bizcocho: sabor });
     const seleccionarRelleno = (sabor) => setTarta({ ...tarta, relleno: sabor });
@@ -52,13 +53,12 @@ export default function ConfiguradorTartas() {
                 await enviarPorEmail(datosCliente, tarta, extras, emailCliente, fotoAdjunta);
 
                 // Si la línea de arriba termina sin errores, mostramos el éxito
-                alert("¡Gracias por tu mensaje!. Hemos recibido tu diseño y pronto te ayudaremos a diseñar tu tarta perfecta");
-                   
+                setPedidoEnviado(true);
 
             } catch (error) {
                 // Si el backend da algún fallo, avisamos para que no se queden esperando
                 console.error("Falló el envío:", error);
-                alert("Uy, hubo un problemilla enviando el correo. ¿Podrías intentarlo por WhatsApp?");
+                alert("Hubo un error, inténtalo de nuevo.");
             }
         }
     };
@@ -124,6 +124,8 @@ export default function ConfiguradorTartas() {
                             enviarPedido={enviarPedido}
                             fotoAdjunta={fotoAdjunta}
                             setFotoAdjunta={setFotoAdjunta}
+                            pedidoEnviado={pedidoEnviado}
+                            setPedidoEnviado={setPedidoEnviado}
                         />
                     )}
                 </AnimatePresence>
