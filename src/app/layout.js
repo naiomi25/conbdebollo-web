@@ -20,7 +20,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   display: 'swap',
 });
-// src/app/layout.js
+
 
 export const metadata = {
   title: {
