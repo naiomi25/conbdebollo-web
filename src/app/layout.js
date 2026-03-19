@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import WhatsappFlotante from '@/components/whatsapp';
 import CookieBanner from '@/components/CookieBanner';
 
+'cambios para forzar el redeploy'
+
 // Fuente para titulos
 
 const playfair = Playfair_Display({
@@ -20,7 +22,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   display: 'swap',
 });
-// src/app/layout.js
+
 
 export const metadata = {
   title: {
