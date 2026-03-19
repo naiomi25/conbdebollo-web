@@ -52,7 +52,8 @@ export default function ConfiguradorTartas() {
                 await enviarPorEmail(datosCliente, tarta, extras, emailCliente, fotoAdjunta);
 
                 // Si la línea de arriba termina sin errores, mostramos el éxito
-                alert("¡Pedido enviado por email con éxito! 🎉 Revisa tu bandeja de entrada.");
+                alert("¡Gracias por tu mensaje!. Hemos recibido tu diseño y pronto te ayudaremos a diseñar tu tarta perfecta");
+                   
 
             } catch (error) {
                 // Si el backend da algún fallo, avisamos para que no se queden esperando

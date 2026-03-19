@@ -8,7 +8,7 @@ export default {
       name: 'identificador',
       title: '¿Qué página es?',
       type: 'string',
-      
+
       options: {
         list: [
           { title: 'Tartas', value: 'tartas' },
@@ -19,6 +19,7 @@ export default {
           { title: 'CakePops', value: 'cakepops' },
           { title: 'Vasitos Cheesecake', value: 'cheesecake-vasitos' },
           { title: 'Dulces', value: 'dulces' },
+          { title: 'Eventos', value: 'eventos' },
         ]
       }
     },
@@ -43,6 +44,7 @@ export default {
       title: 'Frase de cierre (Texto invitación)',
       type: 'text',
       rows: 2
-    }
+    },
+   
   ]
 }
