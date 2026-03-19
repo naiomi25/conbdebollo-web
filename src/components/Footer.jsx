@@ -74,11 +74,12 @@ export default function Footer() {
                 <div className="flex flex-col gap-2">
                     <h3 className="text-lg font-bold text-dorado">Legal</h3>
                     <ul className="flex flex-col gap-2 opacity-90 text-sm">
-                        <li><Link href="/privacidad" className="hover:text-dorado transition-colors">Política de Privacidad</Link></li>
+                        <li><Link href="/politica-privacidad" className="hover:text-dorado transition-colors">Política de Privacidad</Link></li>
                         <li><Link href="/aviso-legal" className="hover:text-dorado transition-colors">Aviso Legal</Link></li>
-                        <li><Link href="/cookies" className="hover:text-dorado transition-colors">Política de Cookies</Link></li>
+                        <li><Link href="/politica-cookies" className="hover:text-dorado transition-colors">Política de Cookies</Link></li>
                     </ul>
                     <p className="text-[9px] opacity-70">© 2026 Con B de Bollo. Todos los derechos reservados.</p>
+                    
                 </div>
 
             </div>

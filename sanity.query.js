@@ -5,7 +5,7 @@ const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: "production",
   apiVersion: "2024-01-01",
-  useCdn: false, 
+  useCdn: false,
 });
 
 const builder = imageUrlBuilder(client);
@@ -43,8 +43,20 @@ export async function getContenidoPagina(slug) {
       titulo,
       descripcion,
       cierrePregunta,
-      cierreTexto
+      cierreTexto,
+      
     }`,
     { slug }
+  );
+}
+export async function getEventos() {
+  return client.fetch(
+    `*[_type == "eventos"] | order(orden asc) {
+      _id,
+      title,
+      desc,
+      "img": img.asset->url,
+      detalles
+    }`
   );
 }

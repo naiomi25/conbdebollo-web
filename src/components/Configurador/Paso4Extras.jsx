@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
-export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoEnvio, emailCliente, setEmailCliente, retrocederPaso, enviarPedido ,fotoAdjunta, setFotoAdjunta}) {
+export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoEnvio, emailCliente, setEmailCliente, retrocederPaso, enviarPedido, fotoAdjunta, setFotoAdjunta }) {
+    const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
     return (
         <motion.div
             key="paso4"
@@ -64,22 +66,41 @@ export default function Paso4Extras({ extras, setExtras, metodoEnvio, setMetodoE
                         </div>
                         <div>
                             <label className="block text-xs font-bold text-principal mb-1">Foto de inspiración (Opcional)</label>
-                            <input type="file" accept="image/*" 
-                            onChange={(e) => setFotoAdjunta(e.target.files[0])}
-                            className="w-full text-xs text-texto/60 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-principal/10 file:text-principal hover:file:bg-principal/20 transition-all cursor-pointer" />
+                            <input type="file" accept="image/*"
+                                onChange={(e) => setFotoAdjunta(e.target.files[0])}
+                                className="w-full text-xs text-texto/60 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-principal/10 file:text-principal hover:file:bg-principal/20 transition-all cursor-pointer" />
                         </div>
                     </motion.div>
                 )}
             </div>
 
+            {/* CHECKBOX LEGAL (Obligatorio) */}
+            <div className="mt-6 mb-4 flex items-start gap-3 p-3 bg-principal/5 rounded-xl border border-principal/10">
+                <input
+                    type="checkbox"
+                    id="privacidad"
+                    checked={aceptaPrivacidad}
+                    onChange={(e) => setAceptaPrivacidad(e.target.checked)}
+                    className="mt-1 w-4 h-4 text-green-600 rounded border-principal/30 focus:ring-green-600"
+                />
+                <label htmlFor="privacidad" className="text-xs text-texto/80 leading-relaxed">
+                    He leído y acepto la <a href="/politica-privacidad" target="_blank" className="text-principal font-bold underline hover:text-oscuro">Política de Privacidad</a> y consiento el tratamiento de mis datos para gestionar este pedido. *
+                </label>
+            </div>
+
+            {/* TUS BOTONES DE SIEMPRE */}
             <div className="flex gap-2 pt-2">
                 <button onClick={retrocederPaso} className="px-4 py-3 rounded-xl font-bold text-principal border border-principal/20 bg-fondo hover:bg-principal/5 transition-colors text-sm">Atrás</button>
                 <button
                     onClick={enviarPedido}
-                    disabled={metodoEnvio === 'email' && !emailCliente}
-                    className={`flex-1 py-3 rounded-xl font-bold transition-all shadow-sm text-sm ${metodoEnvio === 'email' && !emailCliente ? 'bg-principal/30 text-fondo cursor-not-allowed' : 'bg-principal text-fondo hover:bg-oscuro'}`}
+                    // Ahora se desactiva si falta el email (en modo email) O si no han aceptado la política
+                    disabled={(metodoEnvio === 'email' && !emailCliente) || !aceptaPrivacidad}
+                    className={`flex-1 py-3 rounded-xl font-bold transition-all shadow-sm text-sm 
+                        ${((metodoEnvio === 'email' && !emailCliente) || !aceptaPrivacidad)
+                            ? 'bg-principal/30 text-fondo cursor-not-allowed'
+                            : 'bg-principal text-fondo hover:bg-oscuro'}`}
                 >
-                    {metodoEnvio === 'whatsapp' ? 'Enviar por WhatsApp 💬' : 'Enviar por Email ✉️'}
+                    {metodoEnvio === "whatsapp" ? "Enviar por WhatsApp 💬" : "Enviar por Email ✉️"}
                 </button>
             </div>
         </motion.div>

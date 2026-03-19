@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from '../components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsappFlotante from '@/components/whatsapp';
+import CookieBanner from '@/components/CookieBanner';
 
 // Fuente para titulos
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         </div>
       <Footer/>
       <WhatsappFlotante />
+      <CookieBanner />
       </body>
     </html>
   );
