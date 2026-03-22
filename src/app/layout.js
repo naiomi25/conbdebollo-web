@@ -29,7 +29,7 @@ export const metadata = {
   title: {
    
     template: '%s | Con B de bollo',
-    default: 'Con B de bollo | Obrador Artesanal y Tartas a Medida', 
+    default: 'Con B de bollo | Obrador artesanal y tartas a Medida', 
   },
   description: 'Especialistas en tartas personalizadas, mesas dulces y repostería artesanal para eventos. Haz tu pedido a medida online y sorprende a tus invitados.',
   keywords: ['tartas a medida', 'pastelería artesanal', 'mesas dulces', 'repostería', 'eventos', 'Madrid', 'muffins','desayunos','tartas de queso','cheesecakes','tartas de cumpleaños','tartas personalizadas','tartas para eventos',],
@@ -46,7 +46,7 @@ export const metadata = {
         url: 'https://conbdebollo-web-6x95.vercel.app/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Logo de Con B de Bollo - Repostería artesanal en Madrid',
+        alt: 'Logo de Con B de Bollo - Repostería artesanal  y tartas personalizadasen Madrid',
       },
     ],
     locale: 'es_ES',
