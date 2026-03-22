@@ -24,7 +24,7 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-
+// 'prueba para redeploy'
 export const metadata = {
   title: {
    
