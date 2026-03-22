@@ -1,7 +1,7 @@
 // schemas/evento.js (o donde tengas tus esquemas)
 export default {
   name: 'eventos',
-  title: 'Eventos', // Esto creará la pestaña principal en el menú izquierdo de Sanity
+  title: 'Eventos', 
   type: 'document',
   fields: [
     { 

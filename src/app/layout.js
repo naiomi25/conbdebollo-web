@@ -31,7 +31,7 @@ export const metadata = {
     default: 'Con B de bollo | Obrador Artesanal y Tartas a Medida', 
   },
   description: 'Especialistas en tartas personalizadas, mesas dulces y repostería artesanal para eventos. Haz tu pedido a medida online y sorprende a tus invitados.',
-  keywords: ['tartas a medida', 'pastelería artesanal', 'mesas dulces', 'repostería', 'eventos', 'Madrid', 'cupcakes','desayunos',''],
+  keywords: ['tartas a medida', 'pastelería artesanal', 'mesas dulces', 'repostería', 'eventos', 'Madrid', 'muffins','desayunos','tartas de queso','cheesecakes','tartas de cumpleaños','tartas personalizadas','tartas para eventos',],
   authors: [{ name: 'Con B de bollo' }],
   creator: 'Con B de bollo',
   
@@ -42,7 +42,7 @@ export const metadata = {
     siteName: 'Con B de bollo',
     images: [
       {
-        url: 'https://www.sudominio.com/ruta-a-una-foto-bonita-de-una-tarta.jpg', // Cambiaremos esto cuando esté online
+        url: 'https://www.sudominio.com/ruta-a-una-foto-bonita-de-una-tarta.jpg', // Cambiar esto cuando esté online
         width: 1200,
         height: 630,
         alt: 'Tartas artesanales a medida',

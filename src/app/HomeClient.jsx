@@ -26,7 +26,7 @@ export default function HomeClient({ opinionesSanity }) {
           className="relative z-20 flex flex-col items-center gap-6 text-center px-4 mt-16"
         >
           <h1 className="text-5xl md:text-7xl text-fondo font-serif tracking-wide drop-shadow-lg">
-            Con B de Bollo
+            Reposteria artesanal
           </h1>
           <div className="w-24 h-1 bg-dorado mb-2"></div>
           <p className="text-lg md:text-xl text-fondo/90 font-sans max-w-2xl drop-shadow-md">
