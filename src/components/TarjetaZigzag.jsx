@@ -1,17 +1,18 @@
-"use client"; 
+"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TarjetaZigzag({ titulo, descripcion, imageUrl, enlace, inversa }) {
   return (
     //  si es "inversa", usamos flex-row-reverse para darle la vuelta
 
     <div className={`flex flex-col items-center gap-12 my-24 ${inversa ? "md:flex-row-reverse" : "md:flex-row"}`}>
-      
+
       {/* LA FOTO */}
       <motion.div
-      
+
         initial={{ opacity: 0, x: inversa ? 50 : -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -20,10 +21,12 @@ export default function TarjetaZigzag({ titulo, descripcion, imageUrl, enlace, i
       >
         {/* Usamos un div con color temporal por si no hay foto aún, pero si pasas imageUrl, la muestra */}
         {imageUrl ? (
-          <img
+          <Image
             src={imageUrl}
             alt={titulo}
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="hover:scale-110 transition-transform duration-700"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-principal">
@@ -41,17 +44,17 @@ export default function TarjetaZigzag({ titulo, descripcion, imageUrl, enlace, i
         className="w-full md:w-1/2 flex flex-col"
       >
         <h3 className="font-serif text-4xl text-principal mb-2">{titulo}</h3>
-        
+
         {/* La línea divisoria elegante */}
         <div className="w-16 h-1 bg-dorado mb-6"></div>
-        
+
         <p className="text-texto leading-relaxed text-lg mb-8">
           {descripcion}
         </p>
-        
+
         {/* El botón que lleva a la sección correspondiente */}
-        <Link 
-          href={enlace} 
+        <Link
+          href={enlace}
           className="px-8 py-3 bg-principal text-fondo font-bold rounded-full hover:bg-oscuro transition-colors self-start"
         >
           Ver Sección

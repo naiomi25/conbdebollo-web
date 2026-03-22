@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 
@@ -26,59 +27,61 @@ export default function EventosClient({ contenido, eventos }) {
                 {/* Eventos con efecto Zigzag */}
                 <div className="space-y-24">
 
-    {(eventos || []).map((evento, index) => {
-        // Truco de Senior: Si el índice es impar (1, 3, 5...), lo ponemos invertido automáticamente.
-        const esInversa = index % 2 !== 0; 
+                    {(eventos || []).map((evento, index) => {
+                        // Truco de Senior: Si el índice es impar (1, 3, 5...), lo ponemos invertido automáticamente.
+                        const esInversa = index % 2 !== 0;
 
-        return (
-            <div
-                key={index}
-                className={`flex flex-col items-center gap-12 ${esInversa ? "md:flex-row-reverse" : "md:flex-row"}`}
-            >
-                            {/* LA FOTO */}
-                            <motion.div
-                                initial={{ opacity: 0, x: esInversa ? 50 : -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="w-full md:w-3/5 overflow-hidden rounded-2xl shadow-lg relative h-[350px] md:h-[500px] bg-principal/20"
+                        return (
+                            <div
+                                key={index}
+                                className={`flex flex-col items-center gap-12 ${esInversa ? "md:flex-row-reverse" : "md:flex-row"}`}
                             >
-                                <img
-                                    src={evento.img}
-                                    alt={evento.title}
-                                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                                />
-                            </motion.div>
+                                {/* LA FOTO */}
+                                <motion.div
+                                    initial={{ opacity: 0, x: esInversa ? 50 : -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                    className="w-full md:w-3/5 overflow-hidden rounded-2xl shadow-lg relative h-[350px] md:h-[500px] bg-principal/20"
+                                >
+                                    <Image
+                                        src={evento.img}
+                                        alt={evento.title}
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                        className="hover:scale-110 transition-transform duration-700"
+                                    />
+                                </motion.div>
 
-                            {/* EL TEXTO - Tamaño ampliado */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                                className="w-full md:w-2/5 flex flex-col"
-                            >
-                                <h3 className="font-serif text-4xl text-principal mb-2">{evento.title}</h3>
+                                {/* EL TEXTO - Tamaño ampliado */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                                    className="w-full md:w-2/5 flex flex-col"
+                                >
+                                    <h3 className="font-serif text-4xl text-principal mb-2">{evento.title}</h3>
 
-                                {/* La línea divisoria elegante - Más grande */}
-                                <div className="w-16 h-1 bg-dorado mb-6"></div>
+                                    {/* La línea divisoria elegante - Más grande */}
+                                    <div className="w-16 h-1 bg-dorado mb-6"></div>
 
-                                <p className="text-texto leading-relaxed text-lg mb-8">
-                                    {evento.desc}
-                                </p>
+                                    <p className="text-texto leading-relaxed text-lg mb-8">
+                                        {evento.desc}
+                                    </p>
 
-                                {/* Detalles con estilo más grande */}
-                                <div className="flex flex-col gap-3">
-                                    {(evento.detalles || []).map((punto, i) => (
-                                        <span key={i} className="text-xs uppercase tracking-[0.2em] text-principal/60 font-bold">
-                                            • {punto}
-                                        </span>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        </div>
-                    )
-                })}
+                                    {/* Detalles con estilo más grande */}
+                                    <div className="flex flex-col gap-3">
+                                        {(evento.detalles || []).map((punto, i) => (
+                                            <span key={i} className="text-xs uppercase tracking-[0.2em] text-principal/60 font-bold">
+                                                • {punto}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            </div>
+                        )
+                    })}
                 </div>
 
                 {/* Cierre */}

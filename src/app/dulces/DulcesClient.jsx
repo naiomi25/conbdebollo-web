@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Tu lista de categorías se queda igual
 const categoriasDulces = [
@@ -79,10 +80,12 @@ export default function DulcesClient({ contenido }) {
                                 className="bg-tarjeta rounded-2xl overflow-hidden shadow-sm border border-principal/10 transition-all hover:shadow-xl"
                             >
                                 <div className="h-72 overflow-hidden relative shrink-0">
-                                    <img
+                                    <Image
                                         src={cat.img}
                                         alt={cat.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                        className="group-hover:scale-110 transition-transform duration-700"
                                     />
                                 </div>
                                 <div className="p-6 flex flex-col grow justify-between text-center">
