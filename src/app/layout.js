@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import WhatsappFlotante from '@/components/whatsapp';
 import CookieBanner from '@/components/CookieBanner';
 
+
 'cambios para forzar el redeploy'
 
 // Fuente para titulos
@@ -36,16 +37,16 @@ export const metadata = {
   creator: 'Con B de bollo',
   
   openGraph: {
-    title: 'Con B de bollo | Tartas a Medida',
-    description: 'Diseña tu tarta perfecta online. Repostería creativa y artesanal para tus mejores celebraciones.',
-    url: 'https://www.sudominio.com',
+    title: 'Con B de bollo | Repostería artesanal y tartas personalizadas en Madrid',
+    description: ' Repostería artesanal para tus mejores celebraciones.Diseña tu tarta perfecta online.',
+    url: 'https://conbdebollo-web-6x95.vercel.app',
     siteName: 'Con B de bollo',
     images: [
       {
-        url: 'https://www.sudominio.com/ruta-a-una-foto-bonita-de-una-tarta.jpg', // Cambiar esto cuando esté online
+        url: 'https://conbdebollo-web-6x95.vercel.app/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Tartas artesanales a medida',
+        alt: 'Logo de Con B de Bollo - Repostería artesanal en Madrid',
       },
     ],
     locale: 'es_ES',
