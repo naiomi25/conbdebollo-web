@@ -33,14 +33,6 @@ export default function AvisoLegalPage() {
                         Última actualización: {new Date().toLocaleDateString('es-ES')}
                     </p>
                     
-                    <h2 className="text-xl font-bold text-principal mt-8">1. Identidad del responsable</h2>
-                    <p>
-                        El responsable del tratamiento de los datos personales recogidos en esta web es:
-                        <br/>- Nombre comercial: <strong>[NOMBRE DE LA PASTELERÍA]</strong>
-                        <br/>- CIF/NIF: <strong>[SU CIF/NIF AQUÍ]</strong>
-                        <br/>- Dirección: <strong>[SU DIRECCIÓN FÍSICA AQUÍ]</strong>
-                        <br/>- Correo electrónico: <strong>[SU EMAIL DE CONTACTO]</strong>
-                    </p>
 
                     {/* Más párrafos legales... */}
                     
