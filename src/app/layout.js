@@ -26,11 +26,9 @@ const montserrat = Montserrat({
 
 // 'prueba para redeploy'
 export const metadata = {
-  title: {
-   
-    template: '%s | Con B de bollo',
-    default: 'Con B de bollo | Obrador artesanal y tartas a Medida', 
-  },
+  // lo que ve google 
+  applicationName: 'Con B de Bollo', // El nombre pequeñito de la web
+  title: 'Con B de Bollo | Tartas a medida y repostería artesanal en Madrid', // El título que aparece en la pestaña del navegador
   description: 'Especialistas en tartas personalizadas, mesas dulces y repostería artesanal para eventos. Haz tu pedido a medida online y sorprende a tus invitados.',
   keywords: ['tartas a medida', 'pastelería artesanal', 'mesas dulces', 'repostería', 'eventos', 'Madrid', 'muffins','desayunos','tartas de queso','cheesecakes','tartas de cumpleaños','tartas personalizadas','tartas para eventos',],
   authors: [{ name: 'Con B de bollo' }],
