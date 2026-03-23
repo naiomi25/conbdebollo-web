@@ -61,7 +61,7 @@ export default function EventosClient({ contenido, eventos }) {
                                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                                     className="w-full md:w-2/5 flex flex-col"
                                 >
-                                    <h3 className="font-serif text-4xl text-principal mb-2">{evento.title}</h3>
+                                    <h2 className="font-serif text-4xl text-principal mb-2">{evento.title}</h2>
 
                                     {/* La línea divisoria elegante - Más grande */}
                                     <div className="w-16 h-1 bg-dorado mb-6"></div>
@@ -93,9 +93,9 @@ export default function EventosClient({ contenido, eventos }) {
                             transition={{ duration: 1 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="font-serif text-2xl sm:text-3xl text-principal mb-6 italic">
+                            <h2 className="font-serif text-2xl sm:text-3xl text-principal mb-6 italic">
                                 {contenido?.cierrePregunta || "¿Buscas algo específico?"}
-                            </h3>
+                            </h2>
                             <p className="text-md text-texto leading-relaxed opacity-90 italic">
                                 {contenido?.cierreTexto || "Cada evento es un mundo. Cuéntanos tu idea y diseñaremos una propuesta a medida para ti."}
                             </p>

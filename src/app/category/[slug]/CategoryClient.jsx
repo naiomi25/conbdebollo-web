@@ -162,9 +162,9 @@ export default function CategoryPage({ slug, productos, contenido }) {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-serif text-2xl sm:text-3xl text-principal mb-6">
+              <h2 className="font-serif text-2xl sm:text-3xl text-principal mb-6">
                 {data.cierrePregunta}
-              </h3>
+              </h2>
               <p className="text-md text-texto italic opacity-90 leading-relaxed">
                 {data.cierreTexto}
               </p>

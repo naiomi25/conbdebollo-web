@@ -89,9 +89,9 @@ export default function DulcesClient({ contenido }) {
                                     />
                                 </div>
                                 <div className="p-6 flex flex-col grow justify-between text-center">
-                                    <h3 className="font-serif text-xl text-principal mb-3 group-hover:text-oscuro transition-colors font-bold">
+                                    <h2 className="font-serif text-xl text-principal mb-3 group-hover:text-oscuro transition-colors font-bold">
                                         {cat.title}
-                                    </h3>
+                                    </h2>
                                     <p className="text-texto text-sm leading-relaxed opacity-80 line-clamp-2">
                                         {cat.desc}
                                     </p>
@@ -111,9 +111,9 @@ export default function DulcesClient({ contenido }) {
                             viewport={{ once: true }}
                         >
                             {/* 3. Usamos los textos de cierre de Sanity */}
-                            <h3 className="font-serif text-2xl sm:text-3xl text-principal mb-6">
+                            <h2 className="font-serif text-2xl sm:text-3xl text-principal mb-6">
                                 {contenido?.cierrePregunta || "¿Buscas algo específico?"}
-                            </h3>
+                            </h2>
                             <p className="text-md text-texto leading-relaxed opacity-90 italic">
                                 {contenido?.cierreTexto || "Nuestras vitrinas cambian cada día. Si tienes un antojo especial, escríbenos."}
                             </p>
