@@ -1,4 +1,4 @@
-// schemas/evento.js (o donde tengas tus esquemas)
+
 export default {
   name: 'eventos',
   title: 'Eventos', 
