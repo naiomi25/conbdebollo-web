@@ -43,6 +43,7 @@ export default function Footer() {
                             {/* Email */}
                             <a
                                 href="mailto:hola@conbdebollo.com"
+                                aria-label="Enviar correo electrónico a Con B de Bollo"
                                 className="flex items-center gap-2 text-texto hover:text-principal transition-colors group"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform">
@@ -56,6 +57,7 @@ export default function Footer() {
                                 href="https://instagram.com/conbdebollo"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Visitar perfil de Instagram de Con B de Bollo"
                                 className="flex items-center gap-2 text-texto hover:text-principal transition-colors group"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform">
@@ -79,7 +81,7 @@ export default function Footer() {
                         <li><Link href="/politica-cookies" className="hover:text-dorado transition-colors">Política de Cookies</Link></li>
                     </ul>
                     <p className="text-[9px] opacity-70">© 2026 Con B de Bollo. Todos los derechos reservados.</p>
-                    
+
                 </div>
 
             </div>
