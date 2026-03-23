@@ -32,7 +32,7 @@ export default function PoliticaCookiesPage() {
                         Última actualización: {new Date().toLocaleDateString('es-ES')}
                     </p>
                     
-                    <h2 className="text-xl font-bold text-principal mt-8">1. Identidad del responsable</h2>
+                    <h2 className="text-xl font-bold text-principal mt-8">4. Identidad del responsable</h2>
                     <p>
                         El responsable del tratamiento de los datos personales recogidos en esta web es:
                         <br/>- Nombre comercial: <strong>[NOMBRE DE LA PASTELERÍA]</strong>
