@@ -91,9 +91,9 @@ export default function CategoryPage({ slug, productos, contenido }) {
 
 
 
-              <h4 className="font-serif text-principal text-lg mb-3 italic">
+              <h2 className="font-serif text-principal text-lg mb-3 italic">
                 Formatos Especiales para Eventos
-              </h4>
+              </h2>
               <p className="text-texto text-sm leading-relaxed max-w-2xl mx-auto opacity-90">
                 Toda nuestra selección de muffins está disponible también en formato <span className="font-bold">cupcake</span> (mín. 18 uds) y <span className="font-bold">minimuffin</span> (mín. 24 uds) para adaptarse perfectamente a sus eventos corporativos o reuniones familiares.
               </p>
@@ -117,9 +117,9 @@ export default function CategoryPage({ slug, productos, contenido }) {
               {/* Detalle decorativo: una esquina dorada o un icono sutil */}
 
 
-              <h4 className="font-serif text-principal text-lg mb-3 italic">
+              <h2 className="font-serif text-principal text-lg mb-3 italic">
                 Corona tu tarta con un Topper
-              </h4>
+              </h2>
               <p className="text-texto text-sm leading-relaxed max-w-2xl mx-auto opacity-90">
                 Haz que tu celebración sea verdaderamente única. Personalizamos toppers en madera o acrílico con nombres, números o esa frase especial que lo significa todo.
               </p>

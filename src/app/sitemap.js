@@ -11,15 +11,15 @@ export default async function sitemap() {
 
     const productos = await client.fetch(query);
 
-    // 2. Construimos las rutas dinámicas de los DULCES individuales (/dulces/nombre-del-dulce)
+   
     const rutasDulces = productos.map((producto) => ({
         url: `${baseUrl}/dulces/${producto.slug}`,
-        lastModified: producto._updatedAt, // Google sabrá exactamente cuándo se modificó
+        lastModified: producto._updatedAt, /
         changeFrequency: 'weekly',
         priority: 0.8,
     }));
 
-    // 3. Construimos TODAS tus rutas fijas y las páginas de categorías
+    
     const rutasFijas = [
         {
             url: baseUrl, // Home
