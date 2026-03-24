@@ -43,7 +43,7 @@ export default function TarjetaZigzag({ titulo, descripcion, imageUrl, enlace, i
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         className="w-full md:w-1/2 flex flex-col"
       >
-        <h3 className="font-serif text-4xl text-principal mb-2">{titulo}</h3>
+        <h2 className="font-serif text-4xl text-principal mb-2">{titulo}</h2>
 
         {/* La línea divisoria elegante */}
         <div className="w-16 h-1 bg-dorado mb-6"></div>
